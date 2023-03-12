@@ -1,1 +1,48 @@
+using System;
+
+namespace KPO_zad_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            string[] goals = new string[n];
+
+            for (int i = 0; i < n; i++)
+                goals[i] = Console.ReadLine();
+
+            string firstTeam = goals[0];
+            string secondTeam = null;
+
+            for (int i = 1; i < n; i++)
+            {
+                if (goals[i] != firstTeam)
+                {
+                    secondTeam = goals[i];
+                    break;
+                }
+            }
+
+            int firstTeamGoals = 1;
+            int secondTeamGoals = 0;
+
+            if (secondTeam == null)
+                Console.WriteLine(firstTeam);
+            else
+            {
+                for (int i = 1; i < n; i++)
+                {
+                    if (goals[i] == firstTeam)
+                        firstTeamGoals++;
+                    else
+                        secondTeamGoals++;
+                }
+
+                Console.WriteLine(firstTeamGoals > secondTeamGoals ? firstTeam : secondTeam);
+            }
+        }
+    }
+}
 
