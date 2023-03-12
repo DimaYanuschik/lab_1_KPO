@@ -23,7 +23,7 @@ namespace KPO_lab1
             values[2] = a * b * c;
             values[3] = (a + b) * c;
             values[4] = a * b + c;
-            values[5] = a - b - c;
+            values[5] = a + b + c;
 
             int maxValue = values[0];
 
